@@ -1,0 +1,84 @@
+/* imp generali */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+.container-flex{
+  display: flex;
+  flex-direction: row;
+}
+
+/* lato sinistro */
+.navLeft{
+  width: 400px;
+  height: 100vh;
+  background-color: lightgrey;
+}
+
+.nL-top{
+  width:100%;
+  height: 60px;
+  background-color: blue;
+  padding: 0 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profile{
+  width: 40px;
+  height: 40px;
+  background-color: lightblue;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: row;
+}
+
+.imp-profilo li{
+  font-size: 20px;
+  list-style-type: none;
+  float: left;
+  margin-right: 20px;
+}
+
+.ricerca{
+  width:100%;
+  height: 40px;
+  background-color: green;
+  display: flex;
+  justify-content: center;
+}
+
+.input{
+  width: 90%;
+  height: 30px;
+  background-color: lightgrey;
+  border-radius: 20px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.input input{
+  width: 90%;
+  height: 90%;
+  background-color: lightgrey;
+}
+
+
+/* lato destro */
+.chat-aperta{
+  width: calc(100vw - 400px);
+  height: 100vh;
+  background-color: lightblue;
+}
