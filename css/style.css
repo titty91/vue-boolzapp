@@ -195,24 +195,27 @@ body{
   font-size: 15px;
 }
 
-.messaggio-verde{
+.sent{
   background-color: #0b7b7c;
   border-radius: 20px 0px 20px 20px;
   padding: 10px;
+  margin-bottom: 10px;
+  width: 100&;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 
-.messaggio-sx{
+.received{
+  background-color: #3e464b;
+  border-radius: 0px 20px 20px 20px;
+  padding: 10px;
+  margin-bottom: 10px;
   width: 100%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-}
-
-.messaggio-grigio{
-  background-color: #3e464b;
-  border-radius: 0px 20px 20px 20px;
-  padding: 10px;
 }
 
 .chat-aperta span>span{

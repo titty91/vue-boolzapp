@@ -17,7 +17,7 @@
   </head>
   <body>
     <main>
-      <div class="container-flex">
+      <div id="app" class="container-flex">
         <div class="navLeft">
           <!-- barra del profilo -->
           <div class="nL-top">
@@ -41,11 +41,11 @@
           </div>
 
           <!-- contatti -->
-          <div id="app" class="lista-chat">
+          <div class="lista-chat">
             <div class="chatta contain">
 
               <!-- contatti in elenco con Vue -->
-              <div v-for="(contact,index) in contacts" class="contatto">
+              <div @click="enterClick(index)" v-for="(contact,index) in contacts" class="contatto">
                 <img :src="contact.avatar" alt="">
                 <div class="infoCont">
                   <div class="nomeCont">
@@ -68,10 +68,10 @@
           <div class="nL-top">
             <div class="profilo-top">
               <div class="profile">
-                <img src="img/profilo1.png" alt="">
+                <img :src="contacts.avatar" alt="">
               </div>
               <div class="nomeCont">
-                <span>Michele</span>
+                <span>{{contacts[activeIndex].name}}</span>
               </div>
             </div>
             <div class="imp-profilo">
@@ -84,24 +84,10 @@
 
           <!-- spazio conversazione -->
           <div class="chat-aperta">
-            <div v-for="message in messages.text"
-            class="messaggio-dx"
+            <div v-for="message in contacts[activeIndex].messages"
             :class="message.status">
-            <span>{{message.text}}<span>15.45</span><img src="img/extgrey.png" alt="" height="12px" width="auto"></span>
-
+            <span>{{message.text}}<span>{{message.date}}</span><img src="img/extgrey.png" alt="" height="12px" width="auto"></span>
             </div>
-            <!-- <div class="messaggio-dx">
-              <div class="messaggio-verde">
-                <div class="freccia"><i class="fas fa-chevron-up"></i></div>
-                <span>messaggio in uscita<span>15.45</span><img src="img/extgrey.png" alt="" height="12px" width="auto"></span>
-              </div>
-            </div>
-            <div class="messaggio-sx">
-              <div class="messaggio-grigio">
-                <div class="freccia"><i class="fas fa-chevron-up"></i></div>
-                <span>messaggio in entrata<span>15.42 </span><img src="img/extgrey.png" alt="" height="12px" width="auto"></span>
-              </div>
-            </div> -->
           </div>
 
           <!-- barra scrivi il messaggio -->

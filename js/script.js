@@ -2,7 +2,7 @@
      new Vue({
       el:'#app',
       data: {
-
+        activeIndex: 0,
         contacts: [
           {
           name: 'Michele',
@@ -12,17 +12,17 @@
             {
             date: '10/01/2020 15:30:55',
             text: 'Hai portato a spasso il cane?',
-            status: 'messaggio-verde'//sent
+            status: 'sent'
             },
             {
             date: '10/01/2020 15:50:00',
             text: 'Ricordati di dargli da mangiare',
-            status: 'messaggio-verde'//sent
+            status: 'sent'
             },
             {
             date: '10/01/2020 16:15:22',
             text: 'Tutto fatto!',
-            status: 'messaggio-grigio'//received
+            status: 'received'
             }
           ],
           },
@@ -88,6 +88,11 @@
           ],
           },
           ]
+      },
+      methods: {
+        enterClick: function(index){//funzione x visualizzare al click la conversazione
+          this.activeIndex = index;
+        }
       }
     })
   }
@@ -96,7 +101,6 @@
     initVue();
 
   }
-  init();
 
 
 
