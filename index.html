@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-    <main>
+    <main id="app">
       <div class="container-flex">
         <div class="navLeft">
           <!-- barra del profilo -->
@@ -26,9 +26,9 @@
             </div>
             <div class="imp-profilo">
               <ul>
-                <li><i class="fas fa-circle-notch"></i></li>
-                <li><i class="fas fa-plus"></i></li>
-                <li><i class="fas fa-ellipsis-h"></i></li>
+                <li> <button type="button" name="button"><i class="fas fa-circle-notch"></i></button> </li>
+                <li> <button type="button" name="button"><i class="fas fa-plus"></i></button> </li>
+                <li> <button type="button" name="button"><i class="fas fa-ellipsis-h"></i></button> </li>
               </ul>
             </div>
           </div>
@@ -313,8 +313,8 @@
             </div>
             <div class="imp-profilo">
               <ul>
-                <li><i class="fas fa-search"></i></li>
-                <li><i class="fas fa-ellipsis-h"></i></li>
+                <li> <button type="button" name="button"><i class="fas fa-search"></i></button></li>
+                <li> <button type="button" name="button"><i class="fas fa-ellipsis-h"></i></button> </li>
               </ul>
             </div>
           </div>
@@ -323,12 +323,13 @@
           <div class="chat-aperta">
             <div class="invio">
               <div class="invio-verde">
-                <span>Luupinn ti Prederò!</span>
+                <div class="freccia"><i class="fas fa-chevron-up"></i></div>
+                <span>Luupinn ti Prederò! <span>15.45 </span><img src="img/extgrey.png" alt="" height="12px" width="auto"></span>
               </div>
             </div>
             <div class="risposta">
               <div class="risposta-grigio">
-                <span>Ciao, ciao Zazzà! &#128540;</span>
+                <span>Ciao, ciao Zazzà! &#128540; <span>15.42 </span><img src="img/extgrey.png" alt="" height="12px" width="auto"></span>
               </div>
             </div>
           </div>
@@ -336,14 +337,16 @@
           <!-- barra scrivi il messaggio -->
           <div class="navBot">
             <span>
-              <span><i class="far fa-grin"></i></span>
-              <span><i class="fas fa-paperclip"></i></span>
+              <button><i class="far fa-grin"></i></button>
+              <button><i class="fas fa-paperclip"></i></button>
             </span>
             <input type="text" name="" value="scrimi un messaggio">
-            <span><i class="fas fa-microphone"></i></span>
+            <button><i class="fas fa-location-arrow"></i></button>
+            <button><i class="fas fa-microphone"></i></button>
           </div>
         </div>
       </div>
     </main>
+    <script type="js/script.js"></script>
   </body>
 </html>
