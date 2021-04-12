@@ -180,7 +180,7 @@ body{
   color: #b2b3b5;
 }
 
-.invio{
+.messaggio-dx{
   width: 100%;
   display: flex;
   justify-content: flex-end;
@@ -188,47 +188,28 @@ body{
 }
 
 .freccia{
-  display: none;
-  position: absolute;
-  top: 0;
-  height: 100%;
   width: 100%;
-  background-color: yellow;
+  float: right;
+  color: #b2b3b5;
+  text-align: right;
+  font-size: 15px;
 }
 
-.freccia i{
-  color: white;
-  font-size: 20px;
-  position: absolute;
-  top: 20%;
-  left: 20%;
-  /* transform: translate(-20%, -20%); */
-}
-
-.freccia.hover{
-  display: block;
-  transition: 0.4s;
-}
-
-.invio-verde{
+.messaggio-verde{
   background-color: #0b7b7c;
   border-radius: 20px 0px 20px 20px;
   padding: 10px;
-  position: relative;
 }
 
-.invio-verde:hover .freccia i{
-    display: block;
-}
 
-.risposta{
+.messaggio-sx{
   width: 100%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
 
-.risposta-grigio{
+.messaggio-grigio{
   background-color: #3e464b;
   border-radius: 0px 20px 20px 20px;
   padding: 10px;
@@ -238,7 +219,6 @@ body{
   font-size: 12px;
   padding-left: 10px;
 }
-
 
 
 /* barra scrivi il messaggio */
@@ -259,7 +239,6 @@ body{
   margin: auto;
 }
 
-
 .navBot input{
   width: 85%;
   height: 70%;
@@ -270,6 +249,7 @@ body{
   font-size:12px;
   padding-left: 20px;
 }
+
 .navBot button{
   background-color: #131c21;
   color: #b2b3b5;
@@ -297,10 +277,4 @@ body{
   background-color: #3e464b;
   color: white;
   transition: 0.4s;
-}
-
-.invio-verde:hover{
-  background-color: red;
-  transition: 0.4s;
-
 }
