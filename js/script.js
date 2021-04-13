@@ -4,7 +4,7 @@
       data: {
         activeIndex: 0,
         textMessage: '',
-
+        searchText: '',
         contacts: [
           {
           name: 'Michele',
@@ -98,16 +98,17 @@
           this.activeIndex = index;
 
         },
-        // - - - - - -  - - - - - - - - - -
+
         sendMessage: function(){
-          // funzione x inserire il messaggio scritto nell'input - aggiungerlo nella lista messaggi dei contatti 
+          // funzione x inserire il messaggio scritto nell'input - aggiungerlo nella lista messaggi dei contatti
           const newMsg = this.getNewMessage(this.textMessage,'sent');
           this.contacts[this.activeIndex].messages.push(newMsg);
           this.textMessage= '';
 
         },
-        getNewMessage: function(text, status){
 
+        getNewMessage: function(text, status){
+          //aggiunge il il messaggio nuovo nella chat con data e ora
           const now = new Date();
           const nowStr = now.getDate() + "/"
                         + now.getMonth() + "/"
@@ -120,6 +121,20 @@
             status: status
           };
         },
+
+        serchContact: function(){
+          //ricerca nella lista dei contatti il nome del contatto
+          const resContacts =[];
+          for (let i = 0; i < contacts.length; i++) {
+            const contact = this.contacts[i];
+            const name = this.contact['name'];
+                    // .toLowerCase= converte la stringa in lettere minuscole
+            if(name.toLowerCase().icludes(this.searchText.toLowerCase())){
+              resContacts.push(contact);
+            }
+          }
+          return resContacts;
+        }
         // - - - - - -  - - - - - - - - - -
       }
 

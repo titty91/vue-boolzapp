@@ -151,7 +151,6 @@ body{
   border-bottom: 1px solid #b2b3b5;
 }
 
-
 /* lato destro */
 .conversazione{
   width: calc(100vw - 400px);
@@ -179,42 +178,34 @@ body{
   background-attachment: fixed;
   color: #b2b3b5;
   overflow: auto;
-
-}
-
-.messaggio-dx{
-  width: 100%;
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  flex-direction: column;
 }
 
 .freccia{
   width: 100%;
   float: right;
   color: #b2b3b5;
-  text-align: right;
   font-size: 15px;
 }
+
 
 .sent{
   background-color: #0b7b7c;
   border-radius: 20px 0px 20px 20px;
   padding: 10px;
   margin-bottom: 10px;
-  width: 100&;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  width: auto;
+  float: right;
+  text-align: right;
 }
-
 
 .received{
   background-color: #3e464b;
   border-radius: 0px 20px 20px 20px;
   padding: 10px;
   margin-bottom: 10px;
-  width: 100%;
+  width: auto;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -233,19 +224,19 @@ body{
   background-color: #131c21;
   padding: 0 10px;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction:row;
+  justify-content: space-around;
   align-items: center;
   color: #b2b3b5;
   font-size: 20px;
 }
 
-.navBot >span{
-  margin: auto;
+.navBot span i {
+  margin-right: 10px;
 }
 
 .navBot input{
-  width: 85%;
+  width: 70%;
   height: 70%;
   background-color: #2a2f32;
   border: none;
@@ -259,7 +250,6 @@ body{
   background-color: #131c21;
   color: #b2b3b5;
   border: none;
-  padding-left: 20px;
   font-size: 20px;
   cursor: pointer;
 }
@@ -268,11 +258,11 @@ body{
 @media screen and (max-width: 1016px){
 
   .navLeft{
-    width: 300px;
+    width: 250px;
   }
 
   .conversazione{
-    width: calc(100vw - 300px);
+    width: calc(100vw - 250px);
   }
 
 }

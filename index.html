@@ -13,6 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <title>WhatsAppTiziana</title>
+    <link rel="shortcut icon" href="img/logoB.jpg" />
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
@@ -36,7 +37,7 @@
           <div class="ricerca">
             <div class="input">
               <span><i class="fas fa-search"></i></span>
-              <input type="text" name="" placeholder="Cerca o inizia una nuova chat"/>
+              <input type="text" v-model="searchText" name="" placeholder="Cerca o inizia una nuova chat"/>
             </div>
           </div>
 
@@ -84,10 +85,11 @@
 
           <!-- spazio conversazione -->
           <div class="chat-aperta">
-            <div v-for="message in contacts[activeIndex].messages"
-            :class="message.status">
-            <span>{{message.text}}<span>{{message.date}}</span><img src="img/extgrey.png" alt="" height="12px" width="auto"></span>
-            </div>
+              <div v-for="message in contacts[activeIndex].messages"
+              :class="message.status">
+                <span>{{message.text}}<span>{{message.date}}</span><img src="img/extgrey.png" alt="" height="12px" width="auto"></span>
+              </div>
+
           </div>
 
           <!-- barra scrivi il messaggio -->
@@ -97,7 +99,6 @@
               <button><i class="fas fa-paperclip"></i></button>
             </span>
             <input @keyup.enter="sendMessage" v-model="textMessage" type="text" name="" placeholder="scrivi un messaggio">
-            <button><i class="fas fa-location-arrow"></i></button>
             <button><i class="fas fa-microphone"></i></button>
           </div>
         </div>
