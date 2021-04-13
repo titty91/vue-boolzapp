@@ -96,7 +96,7 @@
               <button><i class="far fa-grin"></i></button>
               <button><i class="fas fa-paperclip"></i></button>
             </span>
-            <input type="text" name="" placeholder="scrivi un messaggio">
+            <input @keyup.enter="sendMessage" v-model="textMessage" type="text" name="" placeholder="scrivi un messaggio">
             <button><i class="fas fa-location-arrow"></i></button>
             <button><i class="fas fa-microphone"></i></button>
           </div>

@@ -178,6 +178,8 @@ body{
   background-size: contain;
   background-attachment: fixed;
   color: #b2b3b5;
+  overflow: auto;
+
 }
 
 .messaggio-dx{

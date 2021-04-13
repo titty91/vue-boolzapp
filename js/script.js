@@ -3,6 +3,8 @@
       el:'#app',
       data: {
         activeIndex: 0,
+        textMessage: '',
+
         contacts: [
           {
           name: 'Michele',
@@ -90,16 +92,42 @@
           ]
       },
       methods: {
-        enterClick: function(index){//funzione x visualizzare al click la conversazione
+        //funzione x visualizzare al click la conversazione
+        enterClick: function(index){
+
           this.activeIndex = index;
-        }
+
+        },
+        // - - - - - -  - - - - - - - - - -
+        sendMessage: function(){
+          // funzione x inserire il messaggio scritto nell'input - aggiungerlo nella lista messaggi dei contatti 
+          const newMsg = this.getNewMessage(this.textMessage,'sent');
+          this.contacts[this.activeIndex].messages.push(newMsg);
+          this.textMessage= '';
+
+        },
+        getNewMessage: function(text, status){
+
+          const now = new Date();
+          const nowStr = now.getDate() + "/"
+                        + now.getMonth() + "/"
+                        + now.getFullYear()+ " "
+                        + now.getHours() + ":" + now.getMinutes();
+
+          return {
+            date: nowStr,
+            text: text,
+            status: status
+          };
+        },
+        // - - - - - -  - - - - - - - - - -
       }
+
     })
   }
 
   function init(){
     initVue();
-
   }
 
 
