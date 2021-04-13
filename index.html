@@ -37,7 +37,7 @@
           <div class="ricerca">
             <div class="input">
               <span><i class="fas fa-search"></i></span>
-              <input type="text" v-model="searchText" name="" placeholder="Cerca o inizia una nuova chat"/>
+              <input @keyup="serchContact" type="text" v-model="searchText" name="" placeholder="Cerca o inizia una nuova chat"/>
             </div>
           </div>
 
@@ -46,7 +46,7 @@
             <div class="chatta contain">
 
               <!-- contatti in elenco con Vue -->
-              <div @click="enterClick(index)" v-for="(contact,index) in contacts" class="contatto">
+              <div @click="enterClick(index)" v-for="(contact,index) in contacts" v-if="contact.visible" class="contatto">
                 <img :src="contact.avatar" alt="">
                 <div class="infoCont">
                   <div class="nomeCont">

@@ -104,7 +104,7 @@
           const newMsg = this.getNewMessage(this.textMessage,'sent');
           this.contacts[this.activeIndex].messages.push(newMsg);
           this.textMessage= '';
-
+          this.sendAutoReply();
         },
 
         getNewMessage: function(text, status){
@@ -124,18 +124,25 @@
 
         serchContact: function(){
           //ricerca nella lista dei contatti il nome del contatto
-          const resContacts =[];
-          for (let i = 0; i < contacts.length; i++) {
+          for (let i = 0; i < this.contacts.length; i++) {
             const contact = this.contacts[i];
-            const name = this.contact['name'];
+            const name = contact.name;
                     // .toLowerCase= converte la stringa in lettere minuscole
-            if(name.toLowerCase().icludes(this.searchText.toLowerCase())){
-              resContacts.push(contact);
+            if(name.toLowerCase().includes(this.searchText.toLowerCase())){
+              contact.visible = true;
+            }else{
+              contact.visible = false;
             }
           }
-          return resContacts;
+        },
+
+        sendAutoReply: function(){
+          const toReplayIndex = this.activeIndex;
+          setTimeout(()=> {
+            const newMsg = this.getNewMessage('ok', 'received');
+            this.contacts[toReplayIndex].messages.push(newMsg)
+          },1000);
         }
-        // - - - - - -  - - - - - - - - - -
       }
 
     })
